@@ -36,11 +36,6 @@ ZMK_BEHAVIOR(space_tab_lower_tapdance, tap_dance,
   bindings = <&lt LOWER SPACE>, <&kp TAB>;
 )
 
-ZMK_BEHAVIOR(vimlike_home_end, mod_morph,
-  bindings = <&kp HOME>, <&kp END>;
-  mods = <(MOD_LSHIFT | MOD_RSHIFT)>;
-)
-
 ZMK_LAYER(default_layer,
   &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
   &none  &mt &combining_tilde Q  &mt &combining_grave W  &mt &combining_acute E  &mt &combining_diaresis R  &mt &combining_macron T  &mt &combining_macron Y  &mt &combining_diaresis U  &mt &combining_acute I  &mt &combining_grave O  &mt &combining_tilde P  &mt &combining_circumflex DEL
