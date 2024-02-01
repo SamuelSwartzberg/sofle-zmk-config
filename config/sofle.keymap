@@ -41,6 +41,6 @@ ZMK_LAYER(default_layer,
   &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
   &none  &mt LCTRL A  &mt LALT S  &mt LGUI D  &mt LSHIFT F  &mt GLOBE  G  &mt GLOBE H  &mt RSHIFT J  &mt RGUI K  &mt RALT L  &mt RCTRL SEMI &none
   &none  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp C_MUTE  &kp C_PP  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
-  &kp LCLK  &kp LEFT  &kp RIGHT  &kp DEL  &lt RAISE RETURN &space_tab_lower_tapdance &kp BSPC  &kp UP  &kp DOWN  &kp RCLK  
+    &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
 );
 
