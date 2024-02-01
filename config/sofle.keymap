@@ -8,60 +8,63 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-//#define HOST_OS 2
-//#include "helper.h"
+#define HOST_OS 2
+#include "../zmk-nodefree-config/helper.h"
 
 #define BASE 0
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
 
-/ {
-  behaviors {
-    td_mt: tap_dance_mod_tap {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mt LSHIFT CAPSLOCK>, <&kp LCTRL>;
-        };
-  };
+ZMK_UNICODE_SINGLE(combining_acute, N0, N3, N0, N1) // N0, N3, N0, N1 = U+0301
+ZMK_UNICODE_SINGLE(combining_grave, N0, N3, N0, N0) // N0, N3, N0, N0 = U+0300
+ZMK_UNICODE_SINGLE(combining_macron, N0, N3, N0, N4) // N0, N3, N0, N4 = U+0304
+ZMK_UNICODE_SINGLE(combining_circumflex, N0, N3, N0, N6) // N0, N3, N0, N6 = U+0302
+ZMK_UNICODE_SINGLE(combining_tilde, N0, N3, N0, N7) // N0, N3, N0, N7 = U+0303
+ZMK_UNICODE_SINGLE(combining_diaeresis, N0, N3, N0, N8) // N0, N3, N0, N8 = U+0308
 
-  keymap {
-    compatible = "zmk,keymap";
+ZMK_BEHAVIOR(space_tab_lower_tapdance, tap_dance,
+  tapping-term-ms = <200>;
+  bindings = <&lt LOWER SPACE>, <&kp TAB>;
+)
 
-    default_layer {
-      bindings = <
-        &kp BSPC  &kp N1        &kp N2        &kp N3       &kp N4        &kp N5                                                 &kp N6    &kp N7      &kp N8       &kp N9      &kp N0         &kp MINUS
-        &kp ESC   &kp Q         &kp W         &kp E        &kp R         &kp T                                                  &kp Y     &kp U       &kp I        &kp O       &kp P          &kp LBKT
-        &mt  ESC   &mt LCTRL A   &mt LALT S         &mt LGUI D        &mt LSHIFT F         &mt  G                                                  &mt H     &mt RSHIFT J       &mt RGUI K        &mt RALT L       &mt RCTRL SEMI &mt RCTRL SQT
-        &kp  &kp Z         &kp X         &kp C        &kp V         &kp B            &kp C_MUTE             &kp         &kp N     &kp M       &kp COMMA    &kp DOT     &kp FSLH       &kp RIGHT
-                        &kp LCTRL     &kp LALT     &kp LGUI      &lt LOWER SPACE  &lt RAISE RET          &lt RAISE DEL &kp BSPC  &kp LEFT    &kp UP       &kp DOWN
-      >;
+ZMK_BEHAVIOR(vimlike_home_end, mod_morph,
+  bindings = <&kp HOME>, <&kp END>;
+  mods = <(MOD_LSHIFT | MOD_RSHIFT)>;
+)
 
-      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
-    };
+ZMK_LAYER(default_layer,
+  &none &none &none &none &none &none &none &none &none &none &none &none
+  &none &mt &combining_tilde Q &mt &combining_grave W &mt &combining_acute E &mt &combining_diaresis R &mt &combining_macron T &mt &combining_macron Y &mt &combining_diaresis U &mt &combining_acute I &mt &combining_grave O &mt &combining_tilde P &mt &combining_circumflex DEL
+  &none   &mt LCTRL A   &mt LALT S         &mt LGUI D        &mt LSHIFT F         &mt  G                               &mt H     &mt RSHIFT J       &mt RGUI K        &mt RALT L       &mt RCTRL SEMI &none
+  &none  &kp Z         &kp X         &kp C        &kp V         &kp B            &kp C_MUTE             &kp C_PP        &kp N     &kp M       &kp COMMA    &kp DOT     &kp FSLH       &none
+                  &caps_word     &kp LALT     &kp GRAVE       &kp DEL  &lt RAISE         &space_tab_lower_tapdance &kp BSPC  &kp SQT    &kp BSLH       &mt C_MUTE  ,
+  &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV
+);
 
-    lower_layer {
-      bindings = <
-        &kp DE_SECT  &kp F1         &kp F2       &kp F3        &kp F4       &kp F5                                  &kp F6       &kp F7       &kp F8       &kp F9      &kp F10      &kp F11
-        &kp DE_TILD  &kp N1         &kp N2       &kp N3        &kp N4       &kp N5                                  &kp N6       &kp N7       &kp N8       &kp N9      &kp N0       &kp F12
-        &kp LA(L)    &kp DE_EXLM    &kp DE_DQUO  &kp DE_HASH   &kp DE_EQL   &kp DLLR                                &kp DE_LPRN  &kp DE_RPRN  &kp DE_CIRC  &kp DE_AMPR &kp DE_ASTR  &kp DE_QUOT
-        &kp LSHFT    &kp DE_LABK    &kp DE_PERC  &kp DE_PLUS   &kp DE_LCBR  &kp DE_RCBR  &trans       &trans        &kp DE_LBRC  &kp DE_RBRC  &kp DE_BSLS  &kp DE_SLSH &kp DE_QUES  &kp DE_PIPE
-                            &trans       &trans        &trans       &trans       &trans       &kp RG(BSPC)  &kp RA(BSPC) &trans       &trans       &trans
-      >;
+ZMK_LAYER(lower_layer,
+  &none &none &none &none &none &none &none &none &none &none &none &none
+  &kp ESC   &kp N1         &kp N2         &kp N3        &kp N4         &kp N5                                                  &kp N6     &kp N7       &kp N8        &kp N9       &kp N0          &kp BSPC
+  &mt  &caps_word   &mt LCTRL GRAVE   &mt LALT PLUS        &mt LGUI LS(N9)        &mt LSHIFT LBRC          &mt LBKT                                &mt RBKT     &mt RSHIFT RBRC       &mt RGUI LS(N0)        &mt RALT EQUAL        &mt RCTRL  &kp BSPC
+  &kp  &kp LS(N1) &kp LS(N2) &kp LS(N3) &kp LS(N4) &kp LS(N5) &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N10)
+                  &kp LCTRL     &kp LALT     &kp LGUI      &lt LOWER SPACE  &lt RAISE RET          &space_tab_lower_tapdance &kp BSPC  &kp LEFT    &kp UP       &kp DOWN,
+  &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV
+);
 
-      sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_NEXT C_PREV>;
-    };
+ZMK_LAYER(upper_layer,
+  &none &none &none &none &none &none &none &none &none &none &none &none
+  &kp F11  &kp F1        &kp F2        &kp F3       &kp F4        &kp F5                                                 &kp F6    &kp F7      &kp F8       &kp F9      &kp F10         &kp F12
+  &mt  ESC   &mt LCTRL A   &mt LALT S         &mt LGUI D        &mt LSHIFT F         &mt  &vimlike_home_end                                                  &mt LEFT &mt RSHIFT DOWN      &mt RGUI UP        &mt RALT RIGHT       &mt RCTRL SEMI &mt RCTRL SQT
+  &kp  &kp Z         &kp X         &kp C        &kp V         &kp B            &kp C_MUTE             &kp         &kp N     &kp M       &kp COMMA    &kp DOT     &kp FSLH       &kp RIGHT
+                  &kp LCTRL     &kp LALT     &kp LGUI      &lt LOWER SPACE  &lt RAISE RET          &space_tab_lower_tapdance &kp BSPC  &kp LEFT    &kp UP       &kp DOWN,
+  &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV
+);
 
-    raise_layer {
-      bindings = <
-        &bt BT_CLR_ALL  &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2 &bt BT_SEL 3   &bt BT_SEL 4                                     &kp C_PREV   &kp C_PP    &kp C_NEXT   &trans   &trans   &trans
-        &kp K_PASTE     &kp LG(LS(N7))  &kp RG(LEFT)    &kp UP       &kp RG(RIGHT)  &kp PG_UP                                        &kp COMMA    &kp N7      &kp N8       &kp N9   &trans   &trans
-        &kp K_COPY      &kp RA(LEFT)    &kp LEFT        &kp DOWN     &kp RIGHT      &kp RA(RIGHT)                                    &kp DOT      &kp N4      &kp N5       &kp N6   &trans   &trans
-        &kp LSHFT       &kp K_UNDO      &kp K_COPY      &kp K_PASTE  &kp RA(DOWN)   &kp RA(RS(DOWN))    &trans         &trans        &kp N0       &kp N1      &kp N2       &kp N3   &trans   &trans
-                            &trans          &trans       &trans         &trans              &trans         &kp RG(BSPC)  &kp RA(BSPC) &trans      &trans       &trans
-      >;
-      sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_NEXT C_PREV>;
-    };
-  };
-};
+ZMK_LAYER(adjust_layer,
+  &none &none &none &none &none &none &none &none &none &none &none &none
+  &kp F11  &kp F1        &kp F2        &kp F3       &kp F4        &kp F5                                                 &kp F6    &kp F7      &kp F8       &kp F9      &kp F10         &kp F12
+  &mt  ESC   &mt LCTRL A   &mt LALT S         &mt LGUI D        &mt LSHIFT F         &mt  G                                                  &mt H     &mt RSHIFT J       &mt RGUI K        &mt RALT L       &mt RCTRL SEMI &mt RCTRL SQT
+  &kp  &kp Z         &kp X         &kp C        &kp V         &kp B            &kp C_MUTE             &kp         &kp N     &kp M       &kp COMMA    &kp DOT     &kp FSLH       &kp RIGHT
+                  &kp LCTRL     &kp LALT     &kp LGUI      &lt LOWER SPACE  &lt RAISE RET          &space_tab_lower_tapdance &kp BSPC  &kp LEFT    &kp UP       &kp DOWN,
+  &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV
+);
