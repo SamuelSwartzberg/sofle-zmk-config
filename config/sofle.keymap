@@ -44,7 +44,7 @@ ZMK_LAYER(default_layer,
   &none  &mt &combining_tilde Q  &mt &combining_grave W  &mt &combining_acute E  &mt &combining_diaeresis R  &mt &combining_macron T  &mt &combining_macron Y  &mt &combining_diaeresis U  &mt &combining_acute I  &mt &combining_grave O  &mt &combining_tilde P  &none
   &none  &mt LCTRL A  &mt LALT S  &mt LGUI D  &mt LSHIFT F  &mt GLOBE  G  &mt GLOBE H  &mt RSHIFT J  &mt RGUI K  &mt RALT L  &mt RCTRL SEMI &none
   &none  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp C_MUTE  &kp C_PP  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
-    &mkp LCLK  &kp LEFT  &kp RIGHT  &kp DEL  &lt RAISE RETURN &lt LOWER SPACE &kp BSPC  &kp UP  &kp DOWN  &mkp RCLK  
+    &mkp LCLK  &kp LEFT  &kp RIGHT  &kp DEL  &lt RAISE RETURN &space_tab_lower_tapdance &kp BSPC  &kp UP  &kp DOWN  &mkp RCLK  
 
 )
 
