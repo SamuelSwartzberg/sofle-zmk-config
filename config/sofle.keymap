@@ -18,6 +18,7 @@
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
+#define BLUETOOTH 4
 
 &lt {
   tapping-term-ms = <100>;
@@ -40,7 +41,7 @@ ZMK_BEHAVIOR(space_tab_lower_tapdance, tap_dance,
 )
 
 ZMK_LAYER(default_layer,
-  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &mo BLUETOOTH
   &none  &mt &combining_tilde Q  &mt &combining_grave W  &mt &combining_acute E  &mt &combining_diaeresis R  &mt &combining_macron T  &mt &combining_macron Y  &mt &combining_diaeresis U  &mt &combining_acute I  &mt &combining_grave O  &mt &combining_tilde P  &none
   &none  &mt LCTRL A  &mt LALT S  &mt LGUI D  &mt LSHIFT F  &mt GLOBE  G  &mt GLOBE H  &mt RSHIFT J  &mt RGUI K  &mt RALT L  &mt RCTRL SEMI &none
   &none  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp C_MUTE  &kp C_PP  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
@@ -74,6 +75,14 @@ ZMK_LAYER(adjust_layer,
   &none  &none  &none  &none  &none  &none  &kp C_MUTE  &kp C_PP   &none  &none  &none  &none  &none  &none
   &kp LCLK  &kp LEFT  &kp RIGHT  &kp DEL  &lt RAISE RETURN &space_tab_lower_tapdance &kp BSPC  &kp UP  &kp DOWN  &kp RCLK  ,
   &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV
+)
+
+ZMK_LAYER(bluetooth_layer,
+    &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+    &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+    &none  &bt BT_CLR  &bt BT_CLR_ALL  &bt BT_NXT  &bt BT_PRV  &none  &none  &none  &none  &none  &none
+    &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+    &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none 
 )
 
 ZMK_CONDITIONAL_LAYER(1 2, 3)
