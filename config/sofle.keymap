@@ -41,7 +41,7 @@ ZMK_LAYER(default_layer,
   &none  &mt &combining_tilde Q  &mt &combining_grave W  &mt &combining_acute E  &mt &combining_diaeresis R  &mt &combining_macron T  &mt &combining_macron Y  &mt &combining_diaeresis U  &mt &combining_acute I  &mt &combining_grave O  &mt &combining_tilde P  &mt &combining_circumflex DEL
   &none  &mt LCTRL A  &mt LALT S  &mt LGUI D  &mt LSHIFT F  &mt GLOBE  G  &mt GLOBE H  &mt RSHIFT J  &mt RGUI K  &mt RALT L  &mt RCTRL SEMI &none
   &none  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp C_MUTE  &kp C_PP  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
-  &kp LCLK  &kp LEFT  &kp RIGHT  &kp DEL  &lt RAISE RETURN &space_tab_lower_tapdance &kp BSPC  &kp UP  &kp DOWN  &mt RCLK  ,
+  &kp LCLK  &kp LEFT  &kp RIGHT  &kp DEL  &lt RAISE RETURN &space_tab_lower_tapdance &kp BSPC  &kp UP  &kp DOWN  &kp RCLK  ,
   &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV
 );
 
@@ -50,7 +50,7 @@ ZMK_LAYER(lower_layer,
   &none  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &none
   &none  &mt LCTRL GRAVE  &mt LALT SQT  &mt LGUI LS(N9)  &mt LSHIFT LBRC  &mt GLOBE LBKT  &mt GLOBE RBKT  &mt RSHIFT RBRC  &mt RGUI LS(N0)  &mt RALT LS(SQT) &mt RCTRL LS(GRAVE)  &none
   &none  &kp LS(N1) &kp LS(N2) &kp LS(N3) &kp LS(N4) &kp LS(N5) &kp C_MUTE  &kp C_PP  &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N0) &none
-  &kp LCLK  &kp LEFT  &kp RIGHT  &kp DEL  &lt RAISE RETURN &space_tab_lower_tapdance &kp BSPC  &kp UP  &kp DOWN  &mt RCLK  ,
+  &kp LCLK  &kp LEFT  &kp RIGHT  &kp DEL  &lt RAISE RETURN &space_tab_lower_tapdance &kp BSPC  &kp UP  &kp DOWN  &kp RCLK  ,
   &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV
 );
 
@@ -59,7 +59,7 @@ ZMK_LAYER(upper_layer,
   &none  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &none
   &none  &mt LCTRL A  &mt LALT S  &mt LGUI BSLH  &mt LSHIFT PLUS  &mt GLOBE  G  &mt GLOBE H  &mt RSHIFT EQUAL  &mt RGUI LS(BSLH)  &mt RALT L  &mt RCTRL SEMI &none
   &none  &none  &none  &none  &none  &none  &kp C_MUTE  &kp C_PP  &none  &none  &none  &none  &none  &none  
-  &kp LCLK  &kp LEFT  &kp RIGHT  &kp DEL  &lt RAISE RETURN &space_tab_lower_tapdance &kp BSPC  &kp UP  &kp DOWN  &mt RCLK  ,
+  &kp LCLK  &kp LEFT  &kp RIGHT  &kp DEL  &lt RAISE RETURN &space_tab_lower_tapdance &kp BSPC  &kp UP  &kp DOWN  &kp RCLK  ,
   &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV
 );
 
@@ -68,7 +68,7 @@ ZMK_LAYER(adjust_layer,
   &none  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &kp F16  &kp F17  &kp F18  &kp F19  &kp F20  &none
   &none  &mt LCTRL A  &mt LALT S  &mt LGUI D  &mt LSHIFT F  &mt GLOBE  G  &mt GLOBE H  &mt RSHIFT J  &mt RGUI K  &mt RALT L  &mt RCTRL SEMI &none
   &none  &none  &none  &none  &none  &none  &kp C_MUTE  &kp C_PP   &none  &none  &none  &none  &none  &none
-  &kp LCLK  &kp LEFT  &kp RIGHT  &kp DEL  &lt RAISE RETURN &space_tab_lower_tapdance &kp BSPC  &kp UP  &kp DOWN  &mt RCLK  ,
+  &kp LCLK  &kp LEFT  &kp RIGHT  &kp DEL  &lt RAISE RETURN &space_tab_lower_tapdance &kp BSPC  &kp UP  &kp DOWN  &kp RCLK  ,
   &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV
 );
 
