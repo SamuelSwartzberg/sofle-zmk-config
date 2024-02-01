@@ -16,6 +16,14 @@
 #define RAISE 2
 #define ADJUST 3
 
+&lt {
+  tapping-term-ms = <100>;
+}
+
+&mt {
+  tapping-term-ms = <100>;
+}
+
 ZMK_UNICODE_SINGLE(combining_acute, N0, N3, N0, N1) // N0, N3, N0, N1 = U+0301
 ZMK_UNICODE_SINGLE(combining_grave, N0, N3, N0, N0) // N0, N3, N0, N0 = U+0300
 ZMK_UNICODE_SINGLE(combining_macron, N0, N3, N0, N4) // N0, N3, N0, N4 = U+0304
@@ -34,37 +42,39 @@ ZMK_BEHAVIOR(vimlike_home_end, mod_morph,
 )
 
 ZMK_LAYER(default_layer,
-  &none &none &none &none &none &none &none &none &none &none &none &none
-  &none &mt &combining_tilde Q &mt &combining_grave W &mt &combining_acute E &mt &combining_diaresis R &mt &combining_macron T &mt &combining_macron Y &mt &combining_diaresis U &mt &combining_acute I &mt &combining_grave O &mt &combining_tilde P &mt &combining_circumflex DEL
-  &none   &mt LCTRL A   &mt LALT S         &mt LGUI D        &mt LSHIFT F         &mt  G                               &mt H     &mt RSHIFT J       &mt RGUI K        &mt RALT L       &mt RCTRL SEMI &none
-  &none  &kp Z         &kp X         &kp C        &kp V         &kp B            &kp C_MUTE             &kp C_PP        &kp N     &kp M       &kp COMMA    &kp DOT     &kp FSLH       &none
-                  &caps_word     &kp LALT     &kp GRAVE       &kp DEL  &lt RAISE         &space_tab_lower_tapdance &kp BSPC  &kp SQT    &kp BSLH       &mt C_MUTE  ,
+  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+  &none  &mt &combining_tilde Q  &mt &combining_grave W  &mt &combining_acute E  &mt &combining_diaresis R  &mt &combining_macron T  &mt &combining_macron Y  &mt &combining_diaresis U  &mt &combining_acute I  &mt &combining_grave O  &mt &combining_tilde P  &mt &combining_circumflex DEL
+  &none  &mt LCTRL A  &mt LALT S  &mt LGUI D  &mt LSHIFT F  &mt GLOBE  G  &mt GLOBE H  &mt RSHIFT J  &mt RGUI K  &mt RALT L  &mt RCTRL SEMI &none
+  &none  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp C_MUTE  &kp C_PP  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
+  &caps_word  &kp LCLK  &kp GRAVE  &kp DEL  &lt RAISE RETURN &space_tab_lower_tapdance &kp BSPC  &kp SQT  &kp RCLK  &mt BSLH  ,
   &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV
 );
 
 ZMK_LAYER(lower_layer,
-  &none &none &none &none &none &none &none &none &none &none &none &none
-  &kp ESC   &kp N1         &kp N2         &kp N3        &kp N4         &kp N5                                                  &kp N6     &kp N7       &kp N8        &kp N9       &kp N0          &kp BSPC
-  &mt  &caps_word   &mt LCTRL GRAVE   &mt LALT PLUS        &mt LGUI LS(N9)        &mt LSHIFT LBRC          &mt LBKT                                &mt RBKT     &mt RSHIFT RBRC       &mt RGUI LS(N0)        &mt RALT EQUAL        &mt RCTRL  &kp BSPC
-  &kp  &kp LS(N1) &kp LS(N2) &kp LS(N3) &kp LS(N4) &kp LS(N5) &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N10)
-                  &kp LCTRL     &kp LALT     &kp LGUI      &lt LOWER SPACE  &lt RAISE RET          &space_tab_lower_tapdance &kp BSPC  &kp LEFT    &kp UP       &kp DOWN,
+  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+  &none  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &none
+  &none  &mt LCTRL PLUS  &mt LALT SQT  &mt LGUI LS(N9)  &mt LSHIFT LBRC  &mt GLOBE LBKT  &mt GLOBE RBKT  &mt RSHIFT RBRC  &mt RGUI LS(N0)  &mt RALT LS(SQT) &mt RCTRL EQUAL  &none
+  &none  &kp LS(N1) &kp LS(N2) &kp LS(N3) &kp LS(N4) &kp LS(N5) &kp C_MUTE  &kp C_PP  &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N0) &none
+  &caps_word  &kp LCLK  &kp GRAVE  &kp DEL  &lt RAISE RETURN &space_tab_lower_tapdance &kp BSPC  &kp SQT  &kp RCLK  &mt BSLH  ,
   &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV
 );
 
 ZMK_LAYER(upper_layer,
-  &none &none &none &none &none &none &none &none &none &none &none &none
-  &kp F11  &kp F1        &kp F2        &kp F3       &kp F4        &kp F5                                                 &kp F6    &kp F7      &kp F8       &kp F9      &kp F10         &kp F12
-  &mt  ESC   &mt LCTRL A   &mt LALT S         &mt LGUI D        &mt LSHIFT F         &mt  &vimlike_home_end                                                  &mt LEFT &mt RSHIFT DOWN      &mt RGUI UP        &mt RALT RIGHT       &mt RCTRL SEMI &mt RCTRL SQT
-  &kp  &kp Z         &kp X         &kp C        &kp V         &kp B            &kp C_MUTE             &kp         &kp N     &kp M       &kp COMMA    &kp DOT     &kp FSLH       &kp RIGHT
-                  &kp LCTRL     &kp LALT     &kp LGUI      &lt LOWER SPACE  &lt RAISE RET          &space_tab_lower_tapdance &kp BSPC  &kp LEFT    &kp UP       &kp DOWN,
+  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+  &none  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &none
+  &none  &mt LCTRL A  &mt LALT S  &mt LGUI D  &mt LSHIFT F  &mt  &vimlike_home_end  &mt LEFT &mt RSHIFT DOWN  &mt RGUI UP  &mt RALT RIGHT  &mt RCTRL SEMI &none
+  &none  &none  &none  &none  &none  &none  &kp C_MUTE  &kp C_PP  &none  &none  &none  &none  &none  &none  
+  &caps_word  &kp LCLK  &kp GRAVE  &kp DEL  &lt RAISE RETURN &space_tab_lower_tapdance &kp BSPC  &kp SQT  &kp RCLK  &mt BSLH  ,
   &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV
 );
 
 ZMK_LAYER(adjust_layer,
-  &none &none &none &none &none &none &none &none &none &none &none &none
-  &kp F11  &kp F1        &kp F2        &kp F3       &kp F4        &kp F5                                                 &kp F6    &kp F7      &kp F8       &kp F9      &kp F10         &kp F12
-  &mt  ESC   &mt LCTRL A   &mt LALT S         &mt LGUI D        &mt LSHIFT F         &mt  G                                                  &mt H     &mt RSHIFT J       &mt RGUI K        &mt RALT L       &mt RCTRL SEMI &mt RCTRL SQT
-  &kp  &kp Z         &kp X         &kp C        &kp V         &kp B            &kp C_MUTE             &kp         &kp N     &kp M       &kp COMMA    &kp DOT     &kp FSLH       &kp RIGHT
-                  &kp LCTRL     &kp LALT     &kp LGUI      &lt LOWER SPACE  &lt RAISE RET          &space_tab_lower_tapdance &kp BSPC  &kp LEFT    &kp UP       &kp DOWN,
+  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+  &none  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &kp F16  &kp F17  &kp F18  &kp F19  &kp F20  &none
+  &none  &none  &none  &none  &none  &none  &none  &mt RSHIFT PG_DOWN  &mt RGUI PG_UP  &none  &none  &none
+  &none  &none  &none  &none  &none  &none  &kp C_MUTE  &kp C_PP   &none  &none  &none  &none  &none  &none
+  &caps_word  &kp LCLK  &kp GRAVE  &kp DEL  &lt RAISE RETURN &space_tab_lower_tapdance &kp BSPC  &kp SQT  &kp RCLK  &mt BSLH  ,
   &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV
 );
+
+ZMK_CONDITIONAL_LAYER(1 2, 3)
