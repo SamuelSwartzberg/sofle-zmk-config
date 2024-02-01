@@ -66,3 +66,14 @@ ZMK_LAYER(upper_layer,
   &mkp LCLK  &kp LEFT  &kp RIGHT  &kp DEL  &lt RAISE RETURN &space_tab_lower_tapdance &kp BSPC  &kp UP  &kp DOWN  &mkp RCLK  ,
   &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV
 )
+
+ZMK_LAYER(adjust_layer,
+  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+  &none  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &kp F16  &kp F17  &kp F18  &kp F19  &kp F20  &none
+  &none  &mt LCTRL A  &mt LALT S  &mt LGUI D  &mt LSHIFT F  &mt GLOBE  G  &mt GLOBE H  &mt RSHIFT J  &mt RGUI K  &mt RALT L  &mt RCTRL SEMI &none
+  &none  &none  &none  &none  &none  &none  &kp C_MUTE  &kp C_PP   &none  &none  &none  &none  &none  &none
+  &kp LCLK  &kp LEFT  &kp RIGHT  &kp DEL  &lt RAISE RETURN &space_tab_lower_tapdance &kp BSPC  &kp UP  &kp DOWN  &kp RCLK  ,
+  &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV
+)
+
+ZMK_CONDITIONAL_LAYER(1 2, 3)
