@@ -56,6 +56,10 @@ ZMK_BEHAVIOR(hmr, hold_tap,
     hold-trigger-on-release;             // delay positional check until key-release
 )
 
+&sk {
+  quick-release;
+}
+
 
 ZMK_LAYER(default_layer,
   &none  &none  &none  &none  &none  &none  &none  &none  &none  &tog GAMING  &mo TEST  &mo BLUETOOTH
