@@ -21,11 +21,11 @@
 #define BLUETOOTH 4
 
 &lt {
-  tapping-term-ms = <100>;
+  tapping-term-ms = <200>;
 };
 
 &mt {
-  tapping-term-ms = <100>;
+  tapping-term-ms = <200>;
 };
 
 ZMK_UNICODE_SINGLE(combining_acute, N0, N3, N0, N1) // N0, N3, N0, N1 = U+0301
