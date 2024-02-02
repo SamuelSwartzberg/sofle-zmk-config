@@ -58,7 +58,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,
 
 &sk {
   quick-release;
-}
+};
 
 
 ZMK_LAYER(default_layer,
