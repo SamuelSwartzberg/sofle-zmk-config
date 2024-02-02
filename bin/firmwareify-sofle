@@ -22,6 +22,8 @@ right_firmware="$(find "$SOFLE_ZMK_CONFIG_TMP_DIR" -name "sofle_right*" -type f 
 
 cp "$left_firmware" "$nicenano_path" || echo "cp errored. this is expected due to auto-eject"
 
+sleep 2
+
 if [ ! -d "$nicenano_path" ]; then
   echo "Firmware seems to have successfully been copied to the NICENANO and auto-ejected"
 fi
@@ -31,6 +33,8 @@ while [ ! -d "$nicenano_path" ]; do
 done
 
 cp "$right_firmware" "$nicenano_path" || echo "cp errored. this is expected due to auto-eject"
+
+sleep 2
 
 if [ ! -d "$nicenano_path" ]; then
   echo "Firmware seems to have successfully been copied to the NICENANO and auto-ejected"
