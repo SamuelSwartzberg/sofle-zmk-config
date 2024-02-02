@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+set -e
+
+SOFLE_ZMK_CONFIG_TMP_DIR="$XDG_TMP_HOME/sofle-zmk-config"
+firmware="$HOME/Downloads/firmware.zip"
+
+mkdir -p "$SOFLE_ZMK_CONFIG_TMP_DIR"
+
+rm -rf "${SOFLE_ZMK_CONFIG_TMP_DIR:?Would export to root}/*"
+
+unzip -o "$firmware" -d "$SOFLE_ZMK_CONFIG_TMP_DIR"
+
+nicenano_path="/Volumes/NICENANO"
+
+while [ ! -d "$nicenano_path" ]; do
+  ask "Please insert the left NICENANO and press enter" y
+done
+
+left_firmware="$(find "$SOFLE_ZMK_CONFIG_TMP_DIR" -name "sofle_left*" -type f -print -quit)"
+right_firmware="$(find "$SOFLE_ZMK_CONFIG_TMP_DIR" -name "sofle_right*" -type f -print -quit)"
+
+cp "$left_firmware" "$nicenano_path"
+
+if [ ! -d "$nicenano_path" ]; then
+  echo "Firmware seems to have successfully been copied to the NICENANO and auto-ejected"
+fi
+
+while [ -d "$nicenano_path" ]; do
+  ask "Please insert the right NICENANO and press enter" y
+done
+
+cp "$right_firmware" "$nicenano_path"
+
+if [ ! -d "$nicenano_path" ]; then
+  echo "Firmware seems to have successfully been copied to the NICENANO and auto-ejected"
+fi
+
+echo "Firmware has been successfully copied to both NICENANOs"
+
