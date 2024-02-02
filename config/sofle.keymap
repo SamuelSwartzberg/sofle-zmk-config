@@ -60,7 +60,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,
 ZMK_LAYER(default_layer,
   &none  &none  &none  &none  &none  &none  &none  &none  &none  &tog GAMING  &mo TEST  &mo BLUETOOTH
   &none  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &none
-  &none  &hml LCTRL A  &hml LALT S  &hml LGUI D  &hml LSHIFT F  &hml GLOBE G  &hmr GLOBE H  &hmr RSHIFT J  &hmr RGUI K  &hmr RALT L  &hmr RCTRL SEMI &none
+  &sk LSHIFT  &hml LCTRL A  &hml LALT S  &hml LGUI D  &hml LSHIFT F  &hml GLOBE G  &hmr GLOBE H  &hmr RSHIFT J  &hmr RGUI K  &hmr RALT L  &hmr RCTRL SEMI &none
   &none  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp C_MUTE  &kp C_PP  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
   &kp LCLK  &kp DEL  &kp RAISE  &kp LOWER  &kp RETURN &kp SPACE &kp LOWER  &kp RAISE  &kp BSPC  &kp TAB  ,
   &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV
@@ -69,7 +69,7 @@ ZMK_LAYER(default_layer,
 ZMK_LAYER(lower_layer,
   &none  &none  &none  &none  &none  &none  &none  &none  &none  &tog GAMING  &mo TEST  &mo BLUETOOTH
   &none  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &none
-  &none  &hml LCTRL GRAVE  &hml LALT SQT  &hml LGUI LS(N9)  &hml LSHIFT LBRC  &hml GLOBE LBKT  &hmr GLOBE RBKT  &hmr RSHIFT RBRC  &hmr RGUI LS(N0)  &hmr RALT LS(SQT)  &hmr RCTRL BSLH  &none
+  &sk LSHIFT  &hml LCTRL GRAVE  &hml LALT SQT  &hml LGUI LS(N9)  &hml LSHIFT LBRC  &hml GLOBE LBKT  &hmr GLOBE RBKT  &hmr RSHIFT RBRC  &hmr RGUI LS(N0)  &hmr RALT LS(SQT)  &hmr RCTRL BSLH  &none
   &none  &kp LS(N1) &kp LS(N2) &kp LS(N3) &kp LS(N4) &kp LS(N5) &kp C_MUTE  &kp C_PP  &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N0) &none
   &kp LCLK  &kp DEL  &kp RAISE  &kp LOWER  &kp RETURN &kp SPACE &kp LOWER  &kp RAISE  &kp BSPC  &kp TAB  ,
   &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV
@@ -78,7 +78,7 @@ ZMK_LAYER(lower_layer,
 ZMK_LAYER(upper_layer,
   &none  &none  &none  &none  &none  &none  &none  &none  &none  &tog GAMING  &mo TEST  &mo BLUETOOTH
   &none  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &none
-  &none  &hml LCTRL A  &hml LALT LS(BSLH)  &hml LGUI LS(GRAVE)  &hml LSHIFT LS(MINUS)  &hml GLOBE MINUS  &hmr GLOBE LEFT  &hmr RSHIFT DOWN  &hmr RGUI UP  &hmr RALT RIGHT  &hmr RCTRL EQUAL &none
+  &sk LSHIFT  &hml LCTRL A  &hml LALT LS(BSLH)  &hml LGUI LS(GRAVE)  &hml LSHIFT LS(MINUS)  &hml GLOBE MINUS  &hmr GLOBE LEFT  &hmr RSHIFT DOWN  &hmr RGUI UP  &hmr RALT RIGHT  &hmr RCTRL EQUAL &none
   &none  &none  &none  &kp PLUS  &mkp LCLK  &none  &kp C_MUTE  &kp C_PP  &none  &mkp RCLK  &none  &none  &none  &none  
   &kp LCLK  &kp DEL  &kp RAISE  &kp LOWER  &kp RETURN &kp SPACE &kp LOWER  &kp RAISE  &kp BSPC  &kp TAB  ,
   &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV
@@ -87,7 +87,7 @@ ZMK_LAYER(upper_layer,
 ZMK_LAYER(adjust_layer,
   &none  &none  &none  &none  &none  &none  &none  &none  &none  &tog GAMING  &mo TEST  &mo BLUETOOTH
   &none  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &kp F16  &kp F17  &kp F18  &kp F19  &kp F20  &none
-  &none  &hml LCTRL A  &hml LALT S  &hml LGUI D  &hml LSHIFT F  &hml GLOBE G  &hmr GLOBE H  &hmr RSHIFT J  &hmr RGUI K  &hmr RALT L  &hmr RCTRL SEMI &none
+  &sk LSHIFT  &hml LCTRL A  &hml LALT S  &hml LGUI D  &hml LSHIFT F  &hml GLOBE G  &hmr GLOBE H  &hmr RSHIFT J  &hmr RGUI K  &hmr RALT L  &hmr RCTRL SEMI &none
   &none  &none  &none  &none  &none  &none  &kp C_MUTE  &kp C_PP   &none  &none  &none  &none  &none  &none
   &kp LCLK  &kp DEL  &kp RAISE  &kp LOWER  &kp RETURN &kp SPACE &kp LOWER  &kp RAISE  &kp BSPC  &kp TAB  ,
   &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV
