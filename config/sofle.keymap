@@ -22,10 +22,6 @@
 #define TEST 5
 #define GAMING 6
 
-&lt {
-  tapping-term-ms = <200>;
-};
-
 &mt {
   tapping-term-ms = <200>;
 };
