@@ -28,13 +28,6 @@
   tapping-term-ms = <200>;
 };
 
-ZMK_UNICODE_SINGLE(combining_acute, N0, N3, N0, N1) // N0, N3, N0, N1 = U+0301
-ZMK_UNICODE_SINGLE(combining_grave, N0, N3, N0, N0) // N0, N3, N0, N0 = U+0300
-ZMK_UNICODE_SINGLE(combining_macron, N0, N3, N0, N4) // N0, N3, N0, N4 = U+0304
-ZMK_UNICODE_SINGLE(combining_circumflex, N0, N3, N0, N6) // N0, N3, N0, N6 = U+0302
-ZMK_UNICODE_SINGLE(combining_tilde, N0, N3, N0, N7) // N0, N3, N0, N7 = U+0303
-ZMK_UNICODE_SINGLE(combining_diaeresis, N0, N3, N0, N8) // N0, N3, N0, N8 = U+0308
-
 ZMK_BEHAVIOR(space_tab_lower_tapdance, tap_dance,
   tapping-term-ms = <200>;
   bindings = <&lt LOWER SPACE>, <&kp TAB>;
@@ -42,7 +35,7 @@ ZMK_BEHAVIOR(space_tab_lower_tapdance, tap_dance,
 
 ZMK_LAYER(default_layer,
   &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &mo BLUETOOTH
-  &none  &mt &combining_tilde Q  &mt &combining_grave W  &mt &combining_acute E  &mt &combining_diaeresis R  &mt &combining_macron T  &mt &combining_macron Y  &mt &combining_diaeresis U  &mt &combining_acute I  &mt &combining_grave O  &mt &combining_tilde P  &none
+  &none  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &none
   &none  &mt LCTRL A  &mt LALT S  &mt LGUI D  &mt LSHIFT F  &mt GLOBE  G  &mt GLOBE H  &mt RSHIFT J  &mt RGUI K  &mt RALT L  &mt RCTRL SEMI &none
   &none  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp C_MUTE  &kp C_PP  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
   &mkp LCLK  &kp LEFT  &kp RIGHT  &kp DEL  &lt RAISE RETURN &space_tab_lower_tapdance &kp BSPC  &kp UP  &kp DOWN  &mkp RCLK  ,
