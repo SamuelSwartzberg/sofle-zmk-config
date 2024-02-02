@@ -14,23 +14,23 @@ unzip -o "$firmware" -d "$SOFLE_ZMK_CONFIG_TMP_DIR"
 nicenano_path="/Volumes/NICENANO"
 
 while [ ! -d "$nicenano_path" ]; do
-  ask "Please insert the left NICENANO and press enter" y
+  ask "Please insert the left NICENANO and press enter" Y
 done
 
 left_firmware="$(find "$SOFLE_ZMK_CONFIG_TMP_DIR" -name "sofle_left*" -type f -print -quit)"
 right_firmware="$(find "$SOFLE_ZMK_CONFIG_TMP_DIR" -name "sofle_right*" -type f -print -quit)"
 
-cp "$left_firmware" "$nicenano_path"
+cp "$left_firmware" "$nicenano_path" || echo "cp errored. this is expected due to auto-eject"
 
 if [ ! -d "$nicenano_path" ]; then
   echo "Firmware seems to have successfully been copied to the NICENANO and auto-ejected"
 fi
 
-while [ -d "$nicenano_path" ]; do
-  ask "Please insert the right NICENANO and press enter" y
+while [ ! -d "$nicenano_path" ]; do
+  ask "Please insert the right NICENANO and press enter" Y
 done
 
-cp "$right_firmware" "$nicenano_path"
+cp "$right_firmware" "$nicenano_path" || echo "cp errored. this is expected due to auto-eject"
 
 if [ ! -d "$nicenano_path" ]; then
   echo "Firmware seems to have successfully been copied to the NICENANO and auto-ejected"
